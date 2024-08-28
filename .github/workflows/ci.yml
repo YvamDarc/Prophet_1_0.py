@@ -20,7 +20,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         conda-version: 23.3.1
-        environment-file: config/environment.yml  # Mettez à jour le chemin ici
+        environment-file: config/environment.yml  # Chemin correct vers le fichier
         activate-environment: myenv
         auto-activate-base: false
         auto-update-conda: false
@@ -31,8 +31,9 @@ jobs:
 
     - name: Run tests
       run: |
-        # Activate the Conda environment
+        # Load Conda configuration
         source ~/miniconda/etc/profile.d/conda.sh
+        # Activate the Conda environment
         conda activate myenv
         # Run your test command here
         pytest
