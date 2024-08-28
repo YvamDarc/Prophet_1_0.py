@@ -1,0 +1,7 @@
+- name: Lister les Répertoires de Conda
+  run: |
+    echo "Liste des répertoires dans /usr/share/"
+    ls -l /usr/share/
+
+    echo "Liste des répertoires dans /usr/local/"
+    ls -l /usr/local/
