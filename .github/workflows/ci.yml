@@ -20,16 +20,14 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         conda-version: 23.3.1
-        environment-file: environment.yml  # Optionnel si vous avez un fichier environment.yml
-        activate-environment: myenv         # Active l'environnement après installation
-        auto-activate-base: false          # Ne pas activer l'environnement de base automatiquement
-
-    - name: Create Conda environment
-      run: |
-        conda create --name myenv python=3.9 --yes
-        conda activate myenv
-        # Install pip packages
-        pip install -r requirements.txt
+        environment-file: config/environment.yml  # Mettez à jour le chemin ici
+        activate-environment: myenv
+        auto-activate-base: false
+        auto-update-conda: false
+        remove-profiles: true
+        architecture: x64
+        clean-patched-environment-file: true
+        run-post: true
 
     - name: Run tests
       run: |
