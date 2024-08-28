@@ -1,9 +1,15 @@
 name: myenv
 channels:
   - defaults
+  - conda-forge
 dependencies:
-  - python=3.9  # Choisissez une version compatible avec Conda 23.3.1
+  - python=3.9
   - numpy
   - pandas
   - scikit-learn
   - pytest
+  - prophet
+  - plotly
+  - openpyxl
+  - xlsxwriter
+  - holidays
