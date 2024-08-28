@@ -20,14 +20,11 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
+        conda-version: 23.3.1
+        environment-file: environment.yml  # Optionnel si vous avez un fichier environment.yml
 
     - name: Create Conda environment
       run: |
-        # Initialize Conda for the shell session
-        conda init bash
-        # Load Conda configuration
-        source ~/.bashrc
-        # Create and activate the Conda environment
         conda create --name myenv python=3.9 --yes
         conda activate myenv
         # Install pip packages
@@ -35,9 +32,8 @@ jobs:
 
     - name: Run tests
       run: |
-        # Load Conda configuration
-        source ~/.bashrc
         # Activate the Conda environment
+        source ~/miniconda/etc/profile.d/conda.sh
         conda activate myenv
         # Run your test command here
         pytest
