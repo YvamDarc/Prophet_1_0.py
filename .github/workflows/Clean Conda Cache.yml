@@ -1,0 +1,22 @@
+name: Clean Conda Cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clean-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Conda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-activate-base: false
+          miniforge-version: '4.12.0'
+
+      - name: Clean Conda cache
+        run: |
+          conda clean --all --yes
