@@ -19,9 +19,10 @@ jobs:
     - name: Set up Miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        auto-update-conda: true
         conda-version: 23.3.1
         environment-file: environment.yml  # Optionnel si vous avez un fichier environment.yml
+        activate-environment: myenv         # Active l'environnement après installation
+        auto-activate-base: false          # Ne pas activer l'environnement de base automatiquement
 
     - name: Create Conda environment
       run: |
