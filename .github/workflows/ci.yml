@@ -20,7 +20,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         conda-version: 23.3.1
-        environment-file: config/environment.yml  # Chemin correct vers le fichier
+        environment-file: environment.yml  # Met à jour le chemin ici
         activate-environment: myenv
         auto-activate-base: false
         auto-update-conda: false
